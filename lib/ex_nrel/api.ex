@@ -5,5 +5,7 @@ defmodule ExNrel.Api do
   TODO: Add examples
   """
 
+  alias __MODULE__
+  alias ExNrel.Parser
   use HTTPoison.Base
 end
