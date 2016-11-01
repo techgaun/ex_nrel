@@ -5,21 +5,27 @@ defmodule ExNrel.Api do
   TODO: Add examples
   """
 
-  alias __MODULE__
-  alias ExNrel.Parser
-  import ExNrel.Utils
-  use HTTPoison.Base
+  defmacro __using__(_opts) do
+    quote do
+      alias ExNrel.Parser
+      import ExNrel.Utils
+      use HTTPoison.Base
 
-  @base_url "https://developer.nrel.gov/api"
+      @base_url "https://developer.nrel.gov/api"
 
-  def build_url(path_arg, query_params) do
-    "#{@base_url}/#{api_key}/#{path_arg}?#{URI.encode_query(query_params)}"
-  end
+      def build_url(path_arg, query_params) do
+        "#{@base_url}/#{path_arg}?#{URI.encode_query(query_params)}"
+      end
 
-  def read(path_arg, query_params \\ %{}) do
-    path_arg
-    |> build_url(query_params)
-    |> Api.get(request_headers)
-    |> Parser.parse
+      def do_get(path_arg, query_params) when is_list(query_params), do: do_get(path_arg, Enum.into(query_params, %{}))
+      def do_get(path_arg, query_params) do
+        query_params = query_params
+          |> Map.put(:api_key, api_key)
+        path_arg
+        |> build_url(query_params)
+        |> __MODULE__.get(request_headers)
+        |> Parser.parse
+      end
+    end
   end
 end
