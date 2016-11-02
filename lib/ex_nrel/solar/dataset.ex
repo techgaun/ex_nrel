@@ -2,7 +2,7 @@ defmodule ExNrel.Solar.Dataset do
   @moduledoc """
   Returns information on the closest climate data for a location.
 
-  Please refer to the [PVWatts documentation](http://developer.nrel.gov/docs/solar/data-query-v1/) for more details.
+  Please refer to the [Dataset documentation](http://developer.nrel.gov/docs/solar/data-query-v1/) for more details.
 
   ## Examples
 
