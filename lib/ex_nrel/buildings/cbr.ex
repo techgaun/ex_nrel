@@ -6,7 +6,7 @@ defmodule ExNrel.Buildings.CBR do
 
   ## Examples
 
-      iex> ExNrel.Buildings.CBR.get(portal: "")
+      iex> ExNrel.Buildings.CBR.get(portal: "Energy")
 
       iex> ExNrel.Buildings.CBR.events(portal: 5)
 
