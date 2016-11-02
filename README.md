@@ -1,5 +1,7 @@
 # ExNrel
 
+[![Build Status](https://semaphoreci.com/api/v1/samaracharya/ex_nrel/branches/master/badge.svg)](https://semaphoreci.com/samaracharya/ex_nrel)
+
 > NREL(https://developer.nrel.gov/) Api client for Elixir
 
 ## Installation
