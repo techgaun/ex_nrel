@@ -64,7 +64,7 @@ iex> ExNrel.Electricity.EnergyIncentives.get(lat: 39.323, lon: -94.23, category:
 iex> ExNrel.Electricity.EnergyIncentives.get(address: "1712 Main Street, Kansas City")
 ```
 
-#### [Utility Rates](http://developer.nrel.gov/docs/electricity/utility-rates-v3/))
+#### [Utility Rates](http://developer.nrel.gov/docs/electricity/utility-rates-v3/)
 
 ```elixir
 iex> ExNrel.Electricity.UtilityRate.get(lat: 39.323, lon: -94.23)
