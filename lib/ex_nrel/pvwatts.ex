@@ -3,6 +3,14 @@ defmodule ExNrel.PVWatts do
   PVWatts v5 wrapper
 
   Please refer to the [PVWatts documentation](https://developer.nrel.gov/docs/solar/pvwatts-v5/) for more details.
+
+  ## Examples
+
+      iex> ExNrel.PVWatts.get(lat: 39.323, lon: -94.23)
+
+      iex> ExNrel.PVWatts.get(address: "1712 Main Street, Kansas City")
+
+      iex> ExNrel.PVWatts.get(lat: 39.323, lon: -94.23, timeframe: "hourly")
   """
   use ExNrel.Api
 
