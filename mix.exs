@@ -3,7 +3,7 @@ defmodule ExNrel.Mixfile do
 
   def project do
     [app: :ex_nrel,
-     version: "0.1.0",
+     version: "0.2.0",
      elixir: "~> 1.2",
      description: "A NREL api client for Elixir",
      source_url: "https://github.com/techgaun/ex_nrel",

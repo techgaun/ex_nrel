@@ -9,7 +9,6 @@ defmodule ExNrel.Api do
     quote do
       alias ExNrel.Parser
       import ExNrel.Utils
-      use HTTPoison.Base
 
       @base_url "https://developer.nrel.gov/api"
 
@@ -25,7 +24,7 @@ defmodule ExNrel.Api do
           |> Map.put(:api_key, api_key)
         path_arg
         |> build_url(query_params)
-        |> __MODULE__.get(request_headers)
+        |> HTTPoison.get(request_headers)
         |> Parser.parse(query_params[:format] || output_format)
       end
     end

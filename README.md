@@ -112,11 +112,23 @@ iex> ExNrel.Solar.Resources.get(lat: 39.323, lon: -94.23)
 iex> ExNrel.Solar.Resources.get(address: "1712 Main Street, Kansas City")
 ```
 
+### API Response
+
+The response from the API is parsed through a simple parser. For JSON, the `poison` package does the job and for XML, currently ExNrel returns the body as string.
+
+The response can be one of:
+
+```elixir
+{:ok, body, [total_limit: api_rate_limit, remaining_limit: api_remaining_limit]}
+
+{:error, %{reason: "failure_reason"}}
+```
+
 ## Contribution
 
 - You can add support for remaining APIs or fix the bug in existing ones.
 - The XML parsing is not in-place.
-- Rate limiting headers might be useful to handle rate limiting issues.
+- ~~Rate limiting headers might be useful to handle rate limiting issues.~~ (Part of response in ExNrel >= 0.2.0)
 
 ## Author
 
