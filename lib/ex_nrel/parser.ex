@@ -11,18 +11,17 @@ defmodule ExNrel.Parser do
   @doc """
   Parses the response from NREL API calls
   """
-  @spec parse(tuple) :: response
-  def parse(response) do
+  @spec parse(tuple, String.t) :: response
+  def parse(response, format) do
     case response do
       {:ok, %HTTPoison.Response{body: body, headers: _, status_code: status}} when status in [200, 201] ->
-        {:ok, parse_success_response(body)}
+        {:ok, parse_success_response(body, format)}
 
       {:ok, %HTTPoison.Response{body: _, headers: _, status_code: 204}} ->
         :ok
 
       {:ok, %HTTPoison.Response{body: body, headers: _, status_code: status}} ->
-        {:ok, json} = Poison.decode(body)
-        {:error, json, status}
+        {:error, body, status}
 
       {:error, %HTTPoison.Error{id: _, reason: reason}} ->
         {:error, %{reason: reason}}
@@ -31,8 +30,6 @@ defmodule ExNrel.Parser do
     end
   end
 
-  defp parse_success_response(body) do
-    body
-    |> Poison.decode!
-  end
+  defp parse_success_response(body, "xml"), do: body
+  defp parse_success_response(body, _), do: body |> Poison.decode!
 end

@@ -14,7 +14,9 @@ defmodule ExNrel.Api do
       @base_url "https://developer.nrel.gov/api"
 
       def build_url(path_arg, query_params) do
-        "#{@base_url}/#{path_arg}?#{URI.encode_query(query_params)}"
+        {format, query_params} = query_params
+          |> Map.pop(:format, "json")
+        "#{@base_url}/#{path_arg}.#{format}?#{URI.encode_query(query_params)}"
       end
 
       def do_get(path_arg, query_params) when is_list(query_params), do: do_get(path_arg, Enum.into(query_params, %{}))
@@ -24,7 +26,7 @@ defmodule ExNrel.Api do
         path_arg
         |> build_url(query_params)
         |> __MODULE__.get(request_headers)
-        |> Parser.parse
+        |> Parser.parse(query_params[:format])
       end
     end
   end

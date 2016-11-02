@@ -36,7 +36,6 @@ defmodule ExNrel.PVWatts do
 
   def get(opts \\ []) do
     opts = Keyword.merge(@defaults, opts)
-    format = opts[:format] || "json"
-    do_get("pvwatts/v5.#{format}", Keyword.delete(opts, :format))
+    do_get("pvwatts/v5", opts)
   end
 end
