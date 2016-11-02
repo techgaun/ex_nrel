@@ -1,8 +1,16 @@
-defmodule ExNrel.CBR do
+defmodule ExNrel.Buildings.CBR do
   @moduledoc """
   Commercial Building Resources API wrapper
 
   Please refer to the [Commercial Building Resources](http://developer.nrel.gov/docs/buildings/commercial-building-resource-database-v1/)
+
+  ## Examples
+
+      iex> ExNrel.Buildings.CBR.get(portal: "")
+
+      iex> ExNrel.Buildings.CBR.events(portal: 5)
+
+      iex> ExNrel.Buildings.CBR.vocabularies(name: "audience-types")
   """
 
   use ExNrel.Api

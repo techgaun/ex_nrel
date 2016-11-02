@@ -1,4 +1,4 @@
-defmodule ExNrel.PVWatts do
+defmodule ExNrel.Solar.PVWatts do
   @moduledoc """
   PVWatts v5 wrapper
 
@@ -6,11 +6,11 @@ defmodule ExNrel.PVWatts do
 
   ## Examples
 
-      iex> ExNrel.PVWatts.get(lat: 39.323, lon: -94.23)
+      iex> ExNrel.Solar.PVWatts.get(lat: 39.323, lon: -94.23)
 
-      iex> ExNrel.PVWatts.get(address: "1712 Main Street, Kansas City")
+      iex> ExNrel.Solar.PVWatts.get(address: "1712 Main Street, Kansas City")
 
-      iex> ExNrel.PVWatts.get(lat: 39.323, lon: -94.23, timeframe: "hourly")
+      iex> ExNrel.Solar.PVWatts.get(lat: 39.323, lon: -94.23, timeframe: "hourly")
   """
   use ExNrel.Api
 
