@@ -26,7 +26,7 @@ defmodule ExNrel.Api do
         path_arg
         |> build_url(query_params)
         |> __MODULE__.get(request_headers)
-        |> Parser.parse(query_params[:format])
+        |> Parser.parse(query_params[:format] || output_format)
       end
     end
   end
