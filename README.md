@@ -8,21 +8,21 @@
 
 You can install it from hex as below:
 
-  1. Add `ex_nrel` to your list of dependencies in `mix.exs`:
+- Add `ex_nrel` to your list of dependencies in `mix.exs`:
 
-    ```elixir
-    def deps do
-      [{:ex_nrel, "~> 0.1.0"}]
-    end
-    ```
+  ```elixir
+  def deps do
+    [{:ex_nrel, "~> 0.2.0"}]
+  end
+  ```
 
-  2. Ensure `ex_nrel` is started before your application:
+- Ensure `ex_nrel` is started before your application:
 
-    ```elixir
-    def application do
-      [applications: [:ex_nrel]]
-    end
-    ```
+  ```elixir
+  def application do
+  [applications: [:ex_nrel]]
+  end
+  ```
 
 ## Usage
 
@@ -36,7 +36,7 @@ config :ex_nrel,
   format: "json"
 ```
 
-Output can be either `json` or `xml`. Currently, the `xml` output returns the string itself so necessary parsing must be done by the SDK user. You can also specify `format` as part of your queries in any of the API calls to get the data of specific format. For example, `ExNrel.Electricity.UtilityRate.get(lat: 39.323, lon: -94.23, format: "json")` explicitly returns `json` overriding the default configuration.
+Output can be either `json` or `xml`. You can also specify `format` as part of your queries in any of the API calls to get the data of specific format. For example, `ExNrel.Electricity.UtilityRate.get(lat: 39.323, lon: -94.23, format: "json")` explicitly returns `json` overriding the default configuration.
 
 ExNrel supports following APIs offered by NREL.
 
@@ -127,7 +127,7 @@ The response can be one of:
 ## Contribution
 
 - You can add support for remaining APIs or fix the bug in existing ones.
-- The XML parsing is not in-place.
+- ~~The XML parsing is not in-place.~~
 - ~~Rate limiting headers might be useful to handle rate limiting issues.~~ (Part of response in ExNrel >= 0.2.0)
 
 ## Author

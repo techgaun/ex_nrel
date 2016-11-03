@@ -3,7 +3,7 @@ defmodule ExNrel.Mixfile do
 
   def project do
     [app: :ex_nrel,
-     version: "0.2.0",
+     version: "0.3.0",
      elixir: "~> 1.2",
      description: "A NREL api client for Elixir",
      source_url: "https://github.com/techgaun/ex_nrel",
@@ -33,6 +33,7 @@ defmodule ExNrel.Mixfile do
   defp deps do
     [
       {:httpoison, "~> 0.8 or ~> 0.9"},
+      {:floki, "~> 0.11.0", optional: true},
       {:earmark, "~> 0.1", only: :dev},
       {:ex_doc, "~> 0.11", only: :dev},
       {:dogma, "~> 0.1", only: [:dev, :test]}
