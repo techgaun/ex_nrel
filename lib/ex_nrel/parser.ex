@@ -33,7 +33,7 @@ defmodule ExNrel.Parser do
     end
   end
 
-  #TODO: fix _parse_recursive to be elixir-y :P
+  # TODO: fix _parse_recursive to be elixir-y :P
   defp parse_success_response(body, "xml") do
     result = body
       |> Floki.parse
