@@ -21,11 +21,11 @@ defmodule ExNrel.Api do
       def do_get(path_arg, query_params) when is_list(query_params), do: do_get(path_arg, Enum.into(query_params, %{}))
       def do_get(path_arg, query_params) do
         query_params = query_params
-          |> Map.put(:api_key, api_key)
+          |> Map.put(:api_key, api_key())
         path_arg
         |> build_url(query_params)
-        |> HTTPoison.get(request_headers)
-        |> Parser.parse(query_params[:format] || output_format)
+        |> HTTPoison.get(request_headers())
+        |> Parser.parse(query_params[:format] || output_format())
       end
     end
   end

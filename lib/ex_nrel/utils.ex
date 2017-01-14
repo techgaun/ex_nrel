@@ -5,5 +5,5 @@ defmodule ExNrel.Utils do
   def output_format, do: Application.get_env(:ex_nrel, :format)
   def user_agent, do: [{"User-agent", "ExNrel"}]
   def compression, do: [{"Content-Encoding", "gzip"}]
-  def request_headers, do: user_agent ++ compression
+  def request_headers, do: user_agent() ++ compression()
 end
