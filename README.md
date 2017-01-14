@@ -1,6 +1,6 @@
 # ExNrel
 
-[![Build Status](https://semaphoreci.com/api/v1/samaracharya/ex_nrel/branches/master/badge.svg)](https://semaphoreci.com/samaracharya/ex_nrel) [![Hex version](https://img.shields.io/hexpm/v/ex_nrel.svg "Hex version")](https://hex.pm/packages/ex_nrel) ![Hex downloads](https://img.shields.io/hexpm/dt/ex_nrel.svg "Hex downloads")
+[![Build Status](https://semaphoreci.com/api/v1/techgaun/ex_nrel/branches/master/badge.svg)](https://semaphoreci.com/techgaun/ex_nrel) [![Hex version](https://img.shields.io/hexpm/v/ex_nrel.svg "Hex version")](https://hex.pm/packages/ex_nrel) ![Hex downloads](https://img.shields.io/hexpm/dt/ex_nrel.svg "Hex downloads")
 
 > NREL(https://developer.nrel.gov/) Api client for Elixir
 
