@@ -2,16 +2,18 @@ defmodule ExNrel.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :ex_nrel,
-     version: "0.3.1",
-     elixir: "~> 1.2",
-     description: "A NREL api client for Elixir",
-     source_url: "https://github.com/techgaun/ex_nrel",
-     package: package(),
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     docs: [extras: ["README.md"]],
-     deps: deps()]
+    [
+      app: :ex_nrel,
+      version: "0.3.1",
+      elixir: "~> 1.2",
+      description: "A NREL api client for Elixir",
+      source_url: "https://github.com/techgaun/ex_nrel",
+      package: package(),
+      build_embedded: Mix.env() == :prod,
+      start_permanent: Mix.env() == :prod,
+      docs: [extras: ["README.md"]],
+      deps: deps()
+    ]
   end
 
   # Configuration for the OTP application
